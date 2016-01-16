@@ -12,6 +12,10 @@ public class WebElementsActions {
         this.driver = driver;
     }
 
+    public void openPage(String url){
+        driver.get(url);
+    }
+
     /**
      * Click a button
      */
@@ -32,9 +36,13 @@ public class WebElementsActions {
      * Insert value into text input HTML field
      */
     public void input(String inputLocator, String inputData) {
-        driver.findElement(By.xpath(inputLocator)).clear();
         driver.findElement(By.xpath(inputLocator)).sendKeys(inputData);
         //log.info("Input in " + inputLocator + ", value - " + inputData);
+    }
+
+    public void clearAndInput(String inputLocator, String inputData) {
+        driver.findElement(By.xpath(inputLocator)).clear();
+        driver.findElement(By.xpath(inputLocator)).sendKeys(inputData);
     }
 
     /**
@@ -68,6 +76,8 @@ public class WebElementsActions {
         return true;
     }
 
+
+
     /**
      * This method is used to agree messages on pop-up windows
      */
@@ -83,7 +93,6 @@ public class WebElementsActions {
         }
         return alertPresence;
     }
-
 
 
     /**
@@ -104,7 +113,6 @@ public class WebElementsActions {
         return alertText;
     }
 
-
     public void moveToElementAndClick(String moveToLocator, String clickToElement) {
         WebElement webElement = null;
         webElement = driver.findElement(By.xpath(moveToLocator));
@@ -117,6 +125,7 @@ public class WebElementsActions {
         //log.info("moved To Element " + moveToLocator + "and clicked on" + clickToElement);
     }
 
+
     /**
      *Method#1 for refresh page
      */
@@ -124,5 +133,7 @@ public class WebElementsActions {
         driver.navigate().refresh();
     }
 
-
+    public void clickElement(String s) {
+        driver.findElement(By.xpath(s));
+    }
 }

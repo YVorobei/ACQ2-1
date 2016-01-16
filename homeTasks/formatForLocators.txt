@@ -1,4 +1,4 @@
-#MainPage
+#pageFactory.PageFactoryMainPage
 
 LocatorName=xpath/cssSelector("locatorValue");
 LocatorName=id("locatorValue");
@@ -9,7 +9,7 @@ LocatorName=name("locatorValue");
 
 
 
-#LoginPage
+#pageFactory.PageFactoryLoginPage
 
 
 
