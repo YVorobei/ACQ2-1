@@ -26,7 +26,7 @@ public class PageFactoryMainPage {
         this.driver = driver;
 
         PageFactory.initElements(driver, this);
-        //pageFactory.initElements(new AjaxElementLocatorFactory(driver, 30), this);
+        //PageFactory.initElements(new AjaxElementLocatorFactory(driver, 30), this);
     }
     public void clickLogo() {
         logo.click();

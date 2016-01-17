@@ -30,7 +30,6 @@ public class WebElementsActions {
      * Click link
      */
     public void clickLink(String linkLocator) throws IOException {
-
         driver.findElement(ConfigData.ui(linkLocator)).click();
         //log.info("Click on Link " + linkLocator);
     }

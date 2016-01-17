@@ -14,8 +14,6 @@ public class LoginTests {
     MainPage mainPage;
     LoginPage loginPage;
 
-    //Logger log = Logger.getLogger(LoginTests.class);
-
 
     @Before
     public void setUp() throws Exception {
@@ -24,7 +22,6 @@ public class LoginTests {
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);//magic
         driver.get("http://www.ellos.se/");
         System.out.println("Start test");
-
     }
 
     @Test
@@ -47,7 +44,7 @@ public class LoginTests {
     @After
     public void tearDown() throws Exception {
         System.out.println("End test");
-        driver.quit();
+        //driver.quit();
     }
 
 }
