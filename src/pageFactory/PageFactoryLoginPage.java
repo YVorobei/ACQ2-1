@@ -30,7 +30,6 @@ public class PageFactoryLoginPage {
         PageFactory.initElements(driver, this);
     }
 
-
     public void fillEmailField(String email){
         emailField.clear();
         emailField.sendKeys(email);

@@ -1,5 +1,7 @@
 import org.openqa.selenium.WebDriver;
 
+import java.io.IOException;
+
 /**
  * Created by ViTaLES on 16.01.2016.
  */
@@ -14,20 +16,32 @@ public class LoginPage {
     }
 
 
-    public void fillEmailField() {
-        web.clearAndInput(".//input[@id='ctl00_ctl00_conMain_conMain_LoginControl_LoginUsername']", "admin@gmail.com");
+    public void fillEmailField(String value) {
+        try {
+            web.clearAndInput("EmailField", value);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
-    public void fillPasswordfield() {
-        web.input(".//input[@id='LoginPasswordText']", "admin@gmail.com");
+    public void fillPasswordfield(String value) {
+        try {
+            web.input("PassField", value);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     public void pressLoginButton() {
-        web.clickButton(".//a[@id='ctl00_ctl00_conMain_conMain_LoginControl_LoginButton']");
+        try {
+            web.clickButton("LoginButton");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
-    public boolean checkErrorShown(String xpath) {
-        if (web.isElementPresent(xpath)) {
+    public boolean checkErrorShown(String locator) throws IOException {
+        if (web.isElementPresent(locator)) {
             System.out.println("Error is present");
             return true;
         } else {

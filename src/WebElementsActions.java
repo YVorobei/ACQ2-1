@@ -1,6 +1,8 @@
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 
+import java.io.IOException;
+
 /**
  * Created by ViTaLES on 10.01.2016.
  */
@@ -19,30 +21,31 @@ public class WebElementsActions {
     /**
      * Click a button
      */
-    public void clickButton(String buttonLocator) {
-        driver.findElement(By.xpath(buttonLocator)).click();
+    public void clickButton(String buttonLocator) throws IOException {
+        driver.findElement(ConfigData.ui(buttonLocator)).click();
         //log.info("Click on Button " + buttonLocator);
     }
 
     /**
      * Click link
      */
-    public void clickLink(String linkLocator) {
-        driver.findElement(By.xpath(linkLocator)).click();
+    public void clickLink(String linkLocator) throws IOException {
+
+        driver.findElement(ConfigData.ui(linkLocator)).click();
         //log.info("Click on Link " + linkLocator);
     }
 
     /**
      * Insert value into text input HTML field
      */
-    public void input(String inputLocator, String inputData) {
-        driver.findElement(By.xpath(inputLocator)).sendKeys(inputData);
+    public void input(String inputLocator, String inputData) throws IOException {
+        driver.findElement(ConfigData.ui(inputLocator)).sendKeys(inputData);
         //log.info("Input in " + inputLocator + ", value - " + inputData);
     }
 
-    public void clearAndInput(String inputLocator, String inputData) {
-        driver.findElement(By.xpath(inputLocator)).clear();
-        driver.findElement(By.xpath(inputLocator)).sendKeys(inputData);
+    public void clearAndInput(String inputLocator, String inputData) throws IOException {
+        driver.findElement(ConfigData.ui(inputLocator)).clear();
+        driver.findElement(ConfigData.ui(inputLocator)).sendKeys(inputData);
     }
 
     /**
@@ -69,8 +72,8 @@ public class WebElementsActions {
     /**
      * Method is used to check that element is present on page.
      */
-    public boolean isElementPresent(String elementLocator) {
-        if (!driver.findElement(By.xpath(elementLocator)).isDisplayed()) {
+    public boolean isElementPresent(String elementLocator) throws IOException {
+        if (!driver.findElement(ConfigData.ui(elementLocator)).isDisplayed()) {
             return false;
         }
         return true;
@@ -113,7 +116,7 @@ public class WebElementsActions {
         return alertText;
     }
 
-    public void moveToElementAndClick(String moveToLocator, String clickToElement) {
+    public void moveToElementAndClick(String moveToLocator, String clickToElement) throws IOException {
         WebElement webElement = null;
         webElement = driver.findElement(By.xpath(moveToLocator));
 

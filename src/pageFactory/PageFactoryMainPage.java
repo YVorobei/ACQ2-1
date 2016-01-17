@@ -24,6 +24,7 @@ public class PageFactoryMainPage {
 
     public PageFactoryMainPage(WebDriver driver) {
         this.driver = driver;
+
         PageFactory.initElements(driver, this);
         //pageFactory.initElements(new AjaxElementLocatorFactory(driver, 30), this);
     }

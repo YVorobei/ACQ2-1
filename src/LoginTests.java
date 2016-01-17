@@ -1,7 +1,4 @@
-import org.junit.After;
-import org.junit.Assert;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.*;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import pageFactory.PageFactoryMainPage;
@@ -16,6 +13,9 @@ public class LoginTests {
     private WebDriver driver;
     MainPage mainPage;
     LoginPage loginPage;
+
+    //Logger log = Logger.getLogger(LoginTests.class);
+
 
     @Before
     public void setUp() throws Exception {
@@ -35,12 +35,13 @@ public class LoginTests {
         mainPage.clickLogo();
         mainPage.switchToLoginPage();
 
-        loginPage.fillEmailField();
-        loginPage.fillPasswordfield();
+        loginPage.fillEmailField("admin@gmail.com");
+        loginPage.fillPasswordfield("Password01");
 
         loginPage.pressLoginButton();
 
-        Assert.assertTrue("Incorrect login to the system with fake log/pass", loginPage.checkErrorShown(".//div[@id='serverValidationErrors']/ul"));
+        Assert.assertTrue("Incorrect login to the system with fake log/pass", loginPage.checkErrorShown("ErrorMess"));
+
     }
 
     @After
