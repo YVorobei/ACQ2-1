@@ -14,7 +14,7 @@ public class LoginPage {
     WebElementsActions web;
 
     //Logger log = Logger.getLogger(this.getClass());
-    private static final Logger log = Logger.getLogger(LoginTests.class);
+    private static final Logger log = Logger.getLogger(LoginPage.class);
 
     public LoginPage(WebDriver driver) {
         this.driver = driver;
