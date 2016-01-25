@@ -23,8 +23,8 @@ Home tasks:
 	You still owe me!
 2. Put all locators to UIMapping.properties
 3. Cover tests login and registration functions (Use Page Obj pattern)
-4. Refactor ConfigData class (do better as you can)
-5. Add logging to WebElementsActions class and rewrite all methods using ConfigData.ui method
+4. Refactor utils.ConfigData class (do better as you can)
+5. Add logging to utils.WebElementsActions class and rewrite all methods using utils.ConfigData.ui method
 
         *All the tasks must be done.
         *It's necessary for your continued participation in the course.

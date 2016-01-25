@@ -1,3 +1,5 @@
+package firstTest;
+
 import org.junit.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -19,7 +21,7 @@ public class firstTest {
         baseUrl = "http://www.ellos.se/";
         //driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);//magic
 
-        //what we must add in this place when we will use WebElementsActions class?
+        //what we must add in this place when we will use utils.WebElementsActions class?
     }
 
     //@Test

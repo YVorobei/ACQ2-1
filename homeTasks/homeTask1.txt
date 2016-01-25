@@ -53,7 +53,7 @@ Week Topics:
 
 
     5. Basic commands Selenium WD
-    6. Writing the first simple test and wrapper WebElementsActions
+    6. Writing the first simple test and wrapper utils.WebElementsActions
 
 
 Home tasks:
@@ -62,10 +62,10 @@ Home tasks:
 For xpath and cssSelectors use Attributes and Attitude between the elements and filters.
 (look at formatForLocators.txt in homeTasks folder)
 2. Learn basic methods of selenium
-3. Add to class WebElementsActions all missing methods from map WebElementsActions(look at link below)
+3. Add to class utils.WebElementsActions all missing methods from map utils.WebElementsActions(look at link below)
 
 Additional task
-*4. Try to write tests to login functional using WebElementsActions class.
+*4. Try to write tests to login functional using utils.WebElementsActions class.
 
 
 Read / watch
@@ -79,7 +79,7 @@ Read / watch
 
     Locators map - https://drive.google.com/file/d/0Bzh6QHLIFmHreDNYcGR6UXBGekU/view?usp=sharing
     Basic methods Selenium WebDriver map - https://drive.google.com/file/d/0Bzh6QHLIFmHrZlVGY1NqRU40czg/view?usp=sharing
-    WebElementsActions map - https://drive.google.com/file/d/0Bzh6QHLIFmHrbTVIWVUxQ1hFdGs/view?usp=sharing
+    utils.WebElementsActions map - https://drive.google.com/file/d/0Bzh6QHLIFmHrbTVIWVUxQ1hFdGs/view?usp=sharing
 
     Description of classes Selenium WD - http://selenium.googlecode.com/git/docs/api/java/index.html
 

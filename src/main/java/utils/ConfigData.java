@@ -1,33 +1,38 @@
+package utils;
+
+import exception.NoElementFound;
 import org.openqa.selenium.By;
 
-import java.io.IOException;
+import java.io.*;
 import java.util.Properties;
 
-/**
- * Created by ViTaLES on 17.01.2016.
- */
+
 public class ConfigData {
 
     //TODO Maven
     public static String uiMappingFile = "/UIMapping.properties";
 
-    public static String getValueFromFile(String key, String fileName) throws IOException {
+    public static String getValueFromFile(String key, String fileName) throws NoElementFound {
         Properties p = new Properties();
 
-        p.load(ConfigData.class.getResourceAsStream(uiMappingFile));
+        try {
+            p.load(ConfigData.class.getResourceAsStream(uiMappingFile));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
         return (p.getProperty(key));
     }
 
 
-    public static By ui(String key) throws IOException {
+    public static By ui(String key) throws NoElementFound  {
         String[] partsOfLocators = getValueFromFile(key, uiMappingFile).split("\"");
         String findMethod = partsOfLocators[0].substring(0, partsOfLocators[0].length() - 1);
         String target = partsOfLocators[1];
 
 /*        System.out.println(key);                //Logo
         System.out.println(partsOfLocators[0]); //cssSelector(
-        System.out.println(findMethod);          //cssSelector
+        System.out.println(findMetod);          //cssSelector
         System.out.println(target);             //.ellos.active*/
 
         // Return By class with appropriate method and target
@@ -60,11 +65,7 @@ public class ConfigData {
                 }
             }
         }
-
-
     }
 
 
 }
-
-

@@ -1,5 +1,8 @@
+package utils;
+
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
+import utils.ConfigData;
 
 import java.io.IOException;
 

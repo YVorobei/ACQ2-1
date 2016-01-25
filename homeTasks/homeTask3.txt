@@ -1,0 +1,51 @@
+Week Topics:
+
+    1. JUnit:
+        - annotations
+        - hierarchy of framework
+        - the execution order of tests
+        - assertions
+
+    2. TestNG:
+        - annotations
+        - hierarchy of framework
+        - the execution order of tests
+        - assertions
+
+
+Home tasks:
+
+1. Write 100+ locators from the ellos.se, using all types of locators (put all locators to UIMapping.properties)
+2. Cover tests login, registration, product page and add to basket functions
+3. Review all examples in the training package (about JUnit and about TestNG)
+
+
+Read / watch
+
+    JUnit
+    https://www.youtube.com/watch?v=QJZb1fNYh9c
+	http://junit.org/
+	http://www.tutorialspoint.com//junit/index.htm
+	
+	TestNG
+    https://www.youtube.com/watch?v=QqvaT0t2jOs&list=PLp18Zf576nRJMlHo_BEscqlNzRGosQnQo
+	http://testng.org/doc/index.html
+	http://www.tutorialspoint.com/testng/
+	
+	Test results
+	https://docs.google.com/spreadsheets/d/1OdFfRwC4j8cXkUb3QVV_P-rDJc9giRrObkSnnIyjGS8/edit#gid=0
+	
+	JUnit map - https://drive.google.com/file/d/0Bzh6QHLIFmHrRHFjSG1DWDhPZW8/view?usp=sharing
+	TestNG map - https://drive.google.com/file/d/0Bzh6QHLIFmHrTUt5VTkyaG82dWs/view?usp=sharing
+
+	
+	According to your questions
+		How run test suite in JUnit
+			package trainings.junit.simple1.sample7;
+			package trainings.junit.simple1.sample8;
+
+		How run test suite in TestNG
+			trainings.testng.simple1.sample9;
+			trainings.testng.simple1.sample10;
+
+			

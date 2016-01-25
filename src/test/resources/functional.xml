@@ -1,0 +1,13 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="FunctionalSuite" verbose="1" >
+    <test name="Functional">
+        <classes>
+            <class name="Tests.RegisterTest"/>
+            <class name="Tests.RegistrationTestNegative"/>
+            <class name="Tests.FindProductTest"/>
+            <class name="Tests.FindProductNegstiveTest"/>
+            <class name="Tests.ComparePricesTest"/>
+            <class name="Tests.ChoseRefrigerator"/>
+        </classes>
+    </test>
+</suite>

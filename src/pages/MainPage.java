@@ -1,7 +1,10 @@
+package pages;
+
 import org.openqa.selenium.WebDriver;
 
 import java.io.IOException;
 import org.apache.log4j.Logger;
+import utils.WebElementsActions;
 
 /**
  * Created by ViTaLES on 16.01.2016.
