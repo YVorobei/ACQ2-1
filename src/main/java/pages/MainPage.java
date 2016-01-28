@@ -98,4 +98,9 @@ public class MainPage {
     public void openMainPage() {
         web.openPage("http://www.ellos.se/");
     }
+
+    public void refreshPage() {
+        web.refreshPage();
+        log.info("Refresh page");
+    }
 }

@@ -2,6 +2,7 @@ package tests;
 
 import org.junit.*;
 import org.junit.runners.MethodSorters;
+import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import pages.LoginPage;
@@ -27,6 +28,7 @@ public class LoginTests {
         System.out.println("Browser open successful");
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
         driver.manage().window().maximize();
+        //driver.manage().window().setSize(new Dimension(1200, 800));
         System.out.println("Start test");
         mainPage = new MainPage(driver);
         loginPage = new LoginPage(driver);
@@ -39,7 +41,7 @@ public class LoginTests {
         System.out.println(loginPage);
 
         mainPage.openMainPage();
-        mainPage.clickLogo();
+        mainPage.refreshPage();
         mainPage.switchToLoginPage();
 
         loginPage.fillEmailField("b.handozhynski@gmail.com");
@@ -53,8 +55,8 @@ public class LoginTests {
 
 
     @Test
-    public void test4_negativeLogin() {
-        //mainPage.switchToLoginPage();
+    public void test2_negativeLogin() {
+        mainPage.switchToLoginPage();
 
         loginPage.fillEmailField("admin@gmail.com");
         loginPage.fillPasswordfield("Password01");
@@ -64,9 +66,10 @@ public class LoginTests {
     }
 
     @Test
-    public void test2_blankEmailField() {
+    public void test3_blankEmailField() {
         mainPage.switchToLoginPage();
 
+        loginPage.fillEmailField(" ");
         loginPage.fillEmailField("");
         loginPage.fillPasswordfield("Password01");
         loginPage.pressLoginButton();
@@ -76,7 +79,7 @@ public class LoginTests {
 
 
     @Test
-    public void test3_blankPasswordField() {
+    public void test4_blankPasswordField() {
 
         loginPage.fillEmailField("admin@gmail.com");
         loginPage.fillPasswordfield("");
@@ -86,7 +89,7 @@ public class LoginTests {
 
     }
 
-    //@Test
+    @Test
     public void test5_blankEmailAndPasswordField() {
 
         loginPage.fillEmailField("");
