@@ -42,9 +42,9 @@ public class MainPage {
 
         try {
             if (web.isElementPresent("EmailField")) {
-                log.info("SwitchTo Login Page was correct - " + web.getElement("EmailField").getText());
+                log.info("SwitchTo Login Page was correct");
             } else {
-                log.error("SwitchTo Login Page was INCORRECT - " + web.getElement("EmailField").getText());
+                log.error("SwitchTo Login Page was INCORRECT");
             }
         } catch (NoElementFound noElementFound) {
             noElementFound.printStackTrace();
@@ -101,6 +101,19 @@ public class MainPage {
 
     public void refreshPage() {
         web.refreshPage();
-        log.info("Refresh page");
+    }
+
+    public void switchToUnderwearBathMenu() {
+        try {
+            web.moveToElementAndClick("UnderwearBathMenu", "UnderwearBathMenuLink");
+        } catch (NoElementFound noElementFound) {
+            noElementFound.printStackTrace();
+        }
+
+        if (web.waitForElementPresent("Panties")) {
+            log.info("SwitchTo Underwear Bath Menu was correct");
+        } else {
+            log.error("SwitchTo Underwear Bath Menu was INCORRECT");
+        }
     }
 }

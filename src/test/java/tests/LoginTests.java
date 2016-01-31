@@ -1,35 +1,22 @@
 package tests;
 
-import org.junit.*;
-import org.junit.runners.MethodSorters;
-import org.openqa.selenium.Dimension;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
+import org.apache.log4j.Logger;
+import org.testng.*;
+import org.testng.annotations.*;
 import pages.LoginPage;
 import pages.MainPage;
-
-import java.util.concurrent.TimeUnit;
 
 
 /**
  * Created by ViTaLES on 16.01.2016.
  */
-@FixMethodOrder(MethodSorters.NAME_ASCENDING)
-public class LoginTests {
+public class LoginTests extends Fixture {
 
-    private static WebDriver driver;
-    static MainPage mainPage;
-    static LoginPage loginPage;
+    private static final Logger log = Logger.getLogger(LoginTests.class);
 
     @BeforeClass
-    public static void setUp() throws Exception {
-        driver = new FirefoxDriver();
-
-        System.out.println("Browser open successful");
-        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-        driver.manage().window().maximize();
-        //driver.manage().window().setSize(new Dimension(1200, 800));
-        System.out.println("Start test");
+    public void setUp() throws Exception {
+        log.info("Start LoginTests");
         mainPage = new MainPage(driver);
         loginPage = new LoginPage(driver);
     }
@@ -41,7 +28,6 @@ public class LoginTests {
         System.out.println(loginPage);
 
         mainPage.openMainPage();
-        mainPage.refreshPage();
         mainPage.switchToLoginPage();
 
         loginPage.fillEmailField("b.handozhynski@gmail.com");
@@ -62,19 +48,17 @@ public class LoginTests {
         loginPage.fillPasswordfield("Password01");
         loginPage.pressLoginButton();
 
-        Assert.assertTrue("Incorrect login to the system with fake log/pass", loginPage.isErrorShown("ErrorMess"));
+        Assert.assertTrue(loginPage.isErrorShown("ErrorMess"), "Incorrect login to the system with fake log/pass");
     }
 
     @Test
     public void test3_blankEmailField() {
-        mainPage.switchToLoginPage();
 
         loginPage.fillEmailField(" ");
-        loginPage.fillEmailField("");
         loginPage.fillPasswordfield("Password01");
         loginPage.pressLoginButton();
 
-        Assert.assertTrue("Error mass NOT shown in case blank Email Field", loginPage.isErrorShown("ErrorMess"));
+        Assert.assertTrue(loginPage.isErrorShown("ErrorMess"), "Error mass NOT shown in case blank Email Field");
     }
 
 
@@ -85,7 +69,7 @@ public class LoginTests {
         loginPage.fillPasswordfield("");
         loginPage.pressLoginButton();
 
-        Assert.assertTrue("Error mass NOT shown in case blank Pass Field", loginPage.isErrorShown("EmptyPassError"));
+        Assert.assertTrue(loginPage.isErrorShown("EmptyPassError"), "Error mass NOT shown in case blank Pass Field");
 
     }
 
@@ -96,15 +80,16 @@ public class LoginTests {
         loginPage.fillPasswordfield("");
         loginPage.pressLoginButton();
 
-        Assert.assertTrue("Error mass NOT shown in case blank Pass Field", loginPage.isErrorShown("EmptyPassError"));
+        Assert.assertTrue(loginPage.isErrorShown("EmptyPassError"), "Error mass NOT shown in case blank Pass Field");
 
+        //cюда смотри!
+        loginPage.switchToMainPage();
     }
 
 
     @AfterClass
     public static void tearDown() throws Exception {
-        System.out.println("End test");
-        driver.quit();
+        log.info("End LoginTests");
     }
 
 }
