@@ -245,4 +245,11 @@ public class WebElementsActions {
         return true;
     }
 
+    public void pressSpace() {
+        try {
+            driver.findElement(ConfigData.ui("Panties")).sendKeys(Keys.SPACE);
+        } catch (NoElementFound noElementFound) {
+            noElementFound.printStackTrace();
+        }
+    }
 }

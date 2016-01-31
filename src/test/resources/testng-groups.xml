@@ -8,7 +8,7 @@
       </run>
     </groups>
     <packages>
-      <package name="src.main.java.trainings.testng.simple3.sample11" />
-   </packages>
+      <package name="trainings.testng.simple2.sample11" />
+    </packages>
   </test>
 </suite>

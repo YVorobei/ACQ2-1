@@ -14,4 +14,5 @@ public class SoftDependenciesTest {
     System.out.println("test2");
 	throw new Error();
   }
+
 }

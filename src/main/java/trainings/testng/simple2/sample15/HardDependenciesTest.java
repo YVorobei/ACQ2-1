@@ -12,6 +12,6 @@ public class HardDependenciesTest {
   @Test
   public void test2() {
     System.out.println("test2");
-	//throw new Error();
+	throw new Error();
   }
 }

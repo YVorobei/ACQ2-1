@@ -2,12 +2,8 @@
 <suite name="FunctionalSuite" verbose="1" >
     <test name="Functional">
         <classes>
-            <class name="Tests.RegisterTest"/>
-            <class name="Tests.RegistrationTestNegative"/>
-            <class name="Tests.FindProductTest"/>
-            <class name="Tests.FindProductNegstiveTest"/>
-            <class name="Tests.ComparePricesTest"/>
-            <class name="Tests.ChoseRefrigerator"/>
+            <class name="tests.LoginTests"/>
+            <class name="tests.ProductPageTests"/>
         </classes>
     </test>
 </suite>

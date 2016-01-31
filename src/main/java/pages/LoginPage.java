@@ -16,6 +16,7 @@ public class LoginPage {
     //Logger log = Logger.getLogger(this.getClass());
     private static final Logger log = Logger.getLogger(LoginPage.class);
 
+
     public LoginPage(WebDriver driver) {
         this.driver = driver;
         web = new WebElementsActions(driver);
@@ -61,6 +62,25 @@ public class LoginPage {
             noElementFound.printStackTrace();
         }
         return false;
+    }
+
+
+    public void switchToMainPage() {
+        try {
+            web.clickLink("LogoOnLoginPage");
+        } catch (NoElementFound noElementFound) {
+            noElementFound.printStackTrace();
+        }
+
+        try {
+            if (web.isElementPresent("LandingContainer")) {
+                log.info("SwitchTo Main Page was correct");
+            } else {
+                log.error("SwitchTo Main Page was INCORRECT");
+            }
+        } catch (NoElementFound noElementFound) {
+            noElementFound.printStackTrace();
+        }
     }
 
 

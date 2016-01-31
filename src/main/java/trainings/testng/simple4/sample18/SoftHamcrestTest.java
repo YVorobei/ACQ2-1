@@ -2,8 +2,8 @@ package trainings.testng.simple4.sample18;
 
 import org.testng.annotations.Test;
 
-import static org.hamcrest.CoreMatchers.is;
-import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.MatcherAssert.*;
+import static org.hamcrest.CoreMatchers.*;
 
 public class SoftHamcrestTest {
   
