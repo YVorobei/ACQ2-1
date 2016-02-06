@@ -40,7 +40,7 @@ public class LoginTests extends Fixture {
     }
 
 
-    @Test
+    //@Test
     public void test2_negativeLogin() {
         mainPage.switchToLoginPage();
 
@@ -51,7 +51,7 @@ public class LoginTests extends Fixture {
         Assert.assertTrue(loginPage.isErrorShown("ErrorMess"), "Incorrect login to the system with fake log/pass");
     }
 
-    @Test
+    //@Test
     public void test3_blankEmailField() {
 
         loginPage.fillEmailField(" ");
@@ -62,7 +62,7 @@ public class LoginTests extends Fixture {
     }
 
 
-    @Test
+    //@Test
     public void test4_blankPasswordField() {
 
         loginPage.fillEmailField("admin@gmail.com");
@@ -73,7 +73,7 @@ public class LoginTests extends Fixture {
 
     }
 
-    @Test
+    //@Test
     public void test5_blankEmailAndPasswordField() {
 
         loginPage.fillEmailField("");

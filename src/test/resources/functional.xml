@@ -2,8 +2,8 @@
 <suite name="FunctionalSuite" verbose="1" >
     <test name="Functional">
         <classes>
-            <class name="tests.LoginTests"/>
-            <class name="tests.ProductPageTests"/>
+           <class name="tests.LoginTests"/>
+            <!--<class name="tests.ProductPageTests"/>-->
         </classes>
     </test>
 </suite>

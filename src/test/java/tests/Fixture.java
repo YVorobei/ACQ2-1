@@ -1,14 +1,22 @@
 package tests;
 
+import net.anthavio.phanbedder.Phanbedder;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.phantomjs.PhantomJSDriver;
+import org.openqa.selenium.phantomjs.PhantomJSDriverService;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.testng.Assert;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
 import pages.LoginPage;
 import pages.MainPage;
 import pages.ProductPage;
+import utils.PropertyLoader;
 
+import java.io.File;
 import java.util.concurrent.TimeUnit;
 
 /**
@@ -20,11 +28,34 @@ public class Fixture {
     public LoginPage loginPage;
     public ProductPage productPage;
 
+    /* Browsers constants */
+    public static final String CHROME = "chrome";
+    public static final String FIREFOX = "firefox";
+    public static final String INTERNET_EXPLORER = "ie";
+    public static final String PHANTOMJS = "phantomjs";
+
     private static final Logger log = Logger.getLogger(Fixture.class);
+    public static final String browserName = PropertyLoader.loadProperty("browser.name");
 
     @BeforeSuite
     public void setEnv(){
-        driver = new FirefoxDriver();
+        //driver = new FirefoxDriver();
+        //System.setProperty("webdriver.chrome.driver", "c:\\Tool\\chromedriver.exe");
+
+        /*File phantomjs = Phanbedder.unpack();
+        DesiredCapabilities caps = new DesiredCapabilities();
+        caps.setCapability(PhantomJSDriverService.PHANTOMJS_EXECUTABLE_PATH_PROPERTY, phantomjs.getAbsolutePath());
+        driver = new PhantomJSDriver(caps);*/
+
+        if(browserName.equals(FIREFOX)){
+            driver = new FirefoxDriver();
+        }else if(browserName.equals(PHANTOMJS)){
+            driver = new PhantomJSDriver();
+        } else if(browserName.equals(CHROME)){
+            driver = new ChromeDriver();
+        } else {
+            Assert.fail("invalid driver name");
+        }
 
         log.info("Browser open successful");
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
@@ -33,10 +64,10 @@ public class Fixture {
 
     @AfterSuite
     public void resetEnv(){
-        if (driver != null){
+        /*if (driver != null){
             driver.quit();
             log.info("Browser close successful");
-        }
+        }*/
         log.info("Tests Suite execution completed.");
     }
 
