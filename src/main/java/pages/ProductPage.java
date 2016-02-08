@@ -69,4 +69,17 @@ public class ProductPage {
     }
 
 
+    public void choseSize() {
+        web.waitForElementPresent("SizeDropDown");
+        try {
+            web.clickButton("SizeDropDown");
+        } catch (NoElementFound noElementFound) {
+            noElementFound.printStackTrace();
+        }
+        try {
+            web.moveToElementAndClick("aaa", "ccc");
+        } catch (NoElementFound noElementFound) {
+            noElementFound.printStackTrace();
+        }
+    }
 }

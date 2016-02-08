@@ -42,15 +42,23 @@ public class Fixture {
         //driver = new FirefoxDriver();
         //System.setProperty("webdriver.chrome.driver", "c:\\Tool\\chromedriver.exe");
 
-        /*File phantomjs = Phanbedder.unpack();
-        DesiredCapabilities caps = new DesiredCapabilities();
-        caps.setCapability(PhantomJSDriverService.PHANTOMJS_EXECUTABLE_PATH_PROPERTY, phantomjs.getAbsolutePath());
-        driver = new PhantomJSDriver(caps);*/
 
         if(browserName.equals(FIREFOX)){
             driver = new FirefoxDriver();
         }else if(browserName.equals(PHANTOMJS)){
-            driver = new PhantomJSDriver();
+            DesiredCapabilities caps = new DesiredCapabilities();
+            caps.setJavascriptEnabled(true); // enabled by default
+            caps.setCapability(
+                    PhantomJSDriverService.PHANTOMJS_EXECUTABLE_PATH_PROPERTY,
+                    "C:/Tool/phantomjs-2.1.1-windows/bin/phantomjs.exe"
+            );
+
+
+            /*File phantomjs = new File("C:\\Tool\\phantomjs-2.1.1-windows\\bin\\phantomjs.exe");
+            System.setProperty("phantomjs.binary.path", phantomjs.getAbsolutePath());
+
+            driver = new PhantomJSDriver();*/
+
         } else if(browserName.equals(CHROME)){
             driver = new ChromeDriver();
         } else {

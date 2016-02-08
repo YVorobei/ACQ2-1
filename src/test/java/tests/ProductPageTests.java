@@ -26,8 +26,8 @@ public class ProductPageTests extends Fixture{
 
     @Test
     public void test1_openProductPage() {
-        //mainPage.openMainPage();
-        //mainPage.refreshPage();
+        mainPage.openMainPage();
+        mainPage.refreshPage();
 
         //(or menu class)
         mainPage.switchToUnderwearBathMenu();
@@ -36,6 +36,9 @@ public class ProductPageTests extends Fixture{
         //or switchToStandartProductPage
         //or switchToProductPage
         productPage.switchToFirstProductPage();
+
+
+        productPage.choseSize();
 
         Assert.assertTrue(productPage.checkCorrectSwitchToProductPage(), "INCorrect switch to product page");
     }

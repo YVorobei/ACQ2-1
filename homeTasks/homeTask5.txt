@@ -1,0 +1,44 @@
+Week Topics:
+
+	1. Git
+	2. Cross-Browsers testing
+
+
+Home tasks:
+
+1. Pull your Maven project to your gitHub(and send me link)
+2. Complete all tests for next login functions:
+	- login;
+	- registration;
+	- product page;
+	- add product to basket;
+	- checkout page;
+	- my cabinet page;
+	As result you must have 6 test class with test methods!
+3. Try to run all your tests on different browsers
+4. Finish git course on codecademy: https://www.codecademy.com/learn/learn-git
+
+
+Read / watch
+
+    Git
+    https://training.github.com/kit/downloads/github-git-cheat-sheet.pdf
+    https://try.github.io/levels/1/challenges/1
+    https://www.atlassian.com/git/tutorials/
+    https://git-scm.com/book/en/v2
+    http://www.ex.ua/79601047
+
+    Git map - https://drive.google.com/file/d/0Bzh6QHLIFmHrMFdXbDdGUHdsdDQ/view?usp=sharing
+
+
+    Video of previous lectures:
+
+TestNG/JUnit      ACQ2 day6-7       - http://www.ex.ua/839722282013 (on ex.ua cause too large)
+Maven             ACQ2 day8         - https://youtu.be/lm6wMblHjDM
+Cross-Br testing  ACQ2 day9         - https://youtu.be/-GSnRhaZBZE
+Git               ACQ2 day10(part1) - https://youtu.be/T6rQjthIUvk
+Git               ACQ2 day10(part2) - https://youtu.be/sAUKU1l2pg0
+
+
+
+
