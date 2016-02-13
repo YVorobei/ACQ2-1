@@ -15,19 +15,14 @@ import java.util.List;
  */
 public class WebElementsActions {
 
-    public WebDriver driver;
-    private static final Logger log = Logger.getLogger(WebElementsActions.class);
+    public WebDriverWrapper driver;
     public static WebDriverWait waitForElement;
-    //private final ConfigData configData;
 
-    public WebElementsActions(WebDriver driver) {
+    private static final Logger log = Logger.getLogger(ClassNameUtil.getCurrentClassName());
+
+    public WebElementsActions(WebDriverWrapper driver) {
         this.driver = driver;
         waitForElement = new WebDriverWait(driver, 20);
-        //this.configData = configData.getUIMappingManager();
-    }
-
-    public void openPage(String url){
-        driver.get(url);
     }
 
     public WebElement getElement(String elementLocator) {
@@ -38,7 +33,6 @@ public class WebElementsActions {
             return null;
         }
     }
-
 
     public List<WebElement> getElements(String elementsLocator) {
         try {

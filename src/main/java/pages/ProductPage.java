@@ -3,25 +3,20 @@ package pages;
 import exception.NoElementFound;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.WebDriver;
+import utils.ClassNameUtil;
+import utils.WebDriverWrapper;
 import utils.WebElementsActions;
 
 /**
  * Created by ViTaLES on 31.01.2016.
  */
-public class ProductPage {
+public class ProductPage extends Page {
 
-    WebDriver driver;
-    WebElementsActions web;
+    private static final Logger log = Logger.getLogger(ClassNameUtil.getCurrentClassName());
 
-    //Logger log = Logger.getLogger(this.getClass());
-    private static final Logger log = Logger.getLogger(ProductPage.class);
-
-
-    public ProductPage(WebDriver driver) {
-        this.driver = driver;
-        web = new WebElementsActions(driver);
+    public ProductPage(WebDriverWrapper dr) {
+        super(dr);
     }
-
 
     public void switchToPantiesCategory() {
         try {

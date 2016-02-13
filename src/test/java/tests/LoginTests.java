@@ -5,6 +5,7 @@ import org.testng.*;
 import org.testng.annotations.*;
 import pages.LoginPage;
 import pages.MainPage;
+import utils.Log4JWrapper;
 
 
 /**
@@ -16,80 +17,77 @@ public class LoginTests extends Fixture {
 
     @BeforeClass
     public void setUp() throws Exception {
-        log.info("Start LoginTests");
-        mainPage = new MainPage(driver);
-        loginPage = new LoginPage(driver);
+        Log4JWrapper.start("Start LoginTests");
     }
 
 
     @Test
     public void test1_positiveLogin() {
-        System.out.println(mainPage);
-        System.out.println(loginPage);
+        ellos.loginPage.openPage();
 
-        mainPage.openMainPage();
-        mainPage.switchToLoginPage();
+        ellos.mainPage.openPage();
+        ellos.mainPage.switchToLoginPage();
 
-        loginPage.fillEmailField("b.handozhynski@gmail.com");
-        loginPage.fillPasswordfield("123456");
+        ellos.loginPage.fillEmailField("b.handozhynski@gmail.com");
+        ellos.loginPage.fillPasswordfield("123456");
 
-        loginPage.pressLoginButton();
-        mainPage.userLogOut();
+        ellos.loginPage.pressLoginButton();
+        ellos.mainPage.userLogOut();
 
-        Assert.assertTrue(mainPage.isUserLogOut());
+        Assert.assertTrue(ellos.mainPage.isUserLogOut());
     }
 
 
     //@Test
     public void test2_negativeLogin() {
-        mainPage.switchToLoginPage();
+        ellos.mainPage.switchToLoginPage();
 
-        loginPage.fillEmailField("admin@gmail.com");
-        loginPage.fillPasswordfield("Password01");
-        loginPage.pressLoginButton();
+        ellos.loginPage.fillEmailField("admin@gmail.com");
+        ellos.loginPage.fillPasswordfield("Password01");
+        ellos.loginPage.pressLoginButton();
 
-        Assert.assertTrue(loginPage.isErrorShown("ErrorMess"), "Incorrect login to the system with fake log/pass");
+        Assert.assertTrue(ellos.loginPage.isErrorShown("ErrorMess"), "Incorrect login to the system with fake log/pass");
     }
 
     //@Test
     public void test3_blankEmailField() {
 
-        loginPage.fillEmailField(" ");
-        loginPage.fillPasswordfield("Password01");
-        loginPage.pressLoginButton();
+        ellos.loginPage.fillEmailField(" ");
+        ellos.loginPage.fillPasswordfield("Password01");
+        ellos.loginPage.pressLoginButton();
 
-        Assert.assertTrue(loginPage.isErrorShown("ErrorMess"), "Error mass NOT shown in case blank Email Field");
+        Assert.assertTrue(ellos.loginPage.isErrorShown("ErrorMess"), "Error mass NOT shown in case blank Email Field");
     }
 
 
     //@Test
     public void test4_blankPasswordField() {
 
-        loginPage.fillEmailField("admin@gmail.com");
-        loginPage.fillPasswordfield("");
-        loginPage.pressLoginButton();
+        ellos.loginPage.fillEmailField("admin@gmail.com");
+        ellos.loginPage.fillPasswordfield("");
+        ellos.loginPage.pressLoginButton();
 
-        Assert.assertTrue(loginPage.isErrorShown("EmptyPassError"), "Error mass NOT shown in case blank Pass Field");
+        Assert.assertTrue(ellos.loginPage.isErrorShown("EmptyPassError"), "Error mass NOT shown in case blank Pass Field");
 
     }
 
     //@Test
     public void test5_blankEmailAndPasswordField() {
 
-        loginPage.fillEmailField("");
-        loginPage.fillPasswordfield("");
-        loginPage.pressLoginButton();
+        ellos.loginPage.fillEmailField("");
+        ellos.loginPage.fillPasswordfield("");
+        ellos.loginPage.pressLoginButton();
 
-        Assert.assertTrue(loginPage.isErrorShown("EmptyPassError"), "Error mass NOT shown in case blank Pass Field");
+        Assert.assertTrue(ellos.loginPage.isErrorShown("EmptyPassError"), "Error mass NOT shown in case blank Pass Field");
 
         //cюда смотри!
-        loginPage.switchToMainPage();
+        ellos.loginPage.switchToMainPage();
     }
 
 
     @AfterClass
     public static void tearDown() throws Exception {
-        log.info("End LoginTests");
+        Log4JWrapper.end("End LoginTests");
     }
 
 }

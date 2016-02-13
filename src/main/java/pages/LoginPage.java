@@ -3,25 +3,20 @@ package pages;
 import exception.NoElementFound;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.WebDriver;
+import utils.ClassNameUtil;
+import utils.WebDriverWrapper;
 import utils.WebElementsActions;
 
 /**
  * Created by ViTaLES on 16.01.2016.
  */
-public class LoginPage {
+public class LoginPage extends Page {
 
-    WebDriver driver;
-    WebElementsActions web;
+    private static final Logger log = Logger.getLogger(ClassNameUtil.getCurrentClassName());
 
-    //Logger log = Logger.getLogger(this.getClass());
-    private static final Logger log = Logger.getLogger(LoginPage.class);
-
-
-    public LoginPage(WebDriver driver) {
-        this.driver = driver;
-        web = new WebElementsActions(driver);
+    public LoginPage(WebDriverWrapper dr) {
+        super(dr);
     }
-
 
     public void fillEmailField(String value) {
         try {

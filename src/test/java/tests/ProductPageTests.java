@@ -14,7 +14,7 @@ import pages.ProductPage;
  */
 public class ProductPageTests extends Fixture{
 
-    private static final Logger log = Logger.getLogger(LoginTests.class);
+    /*private static final Logger log = Logger.getLogger(LoginTests.class);
 
     @BeforeClass
     public void setUp() throws Exception {
@@ -47,5 +47,5 @@ public class ProductPageTests extends Fixture{
     public static void tearDown() throws Exception {
         log.info("End LoginTests");
     }
-
+*/
 }

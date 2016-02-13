@@ -4,23 +4,22 @@ import exception.NoElementFound;
 import org.openqa.selenium.WebDriver;
 
 import org.apache.log4j.Logger;
+import utils.ClassNameUtil;
+import utils.PropertyLoader;
+import utils.WebDriverWrapper;
 import utils.WebElementsActions;
 
 /**
  * Created by ViTaLES on 16.01.2016.
  */
-public class MainPage {
+public class MainPage extends Page {
 
-    WebDriver driver;
-    WebElementsActions web;
+    private static final String MAIN_PAGE = PropertyLoader.loadProperty("site.url");
 
-    //Logger log = Logger.getLogger(this.getClass());
-    private static final Logger log = Logger.getLogger(MainPage.class);
+    private static final Logger log = Logger.getLogger(ClassNameUtil.getCurrentClassName());
 
-
-    public MainPage(WebDriver driver) {
-        this.driver = driver;
-        web = new WebElementsActions(driver);
+    public MainPage(WebDriverWrapper dr) {
+        super(dr, MAIN_PAGE);
     }
 
     public void clickLogo() {
@@ -93,10 +92,6 @@ public class MainPage {
         } catch (NoElementFound noElementFound) {
             noElementFound.printStackTrace();
         }
-    }
-
-    public void openMainPage() {
-        web.openPage("http://www.ellos.se/");
     }
 
     public void refreshPage() {
