@@ -1,0 +1,43 @@
+Week Topics:
+
+	1. Jenkins
+	2. Wrappers
+       		- PropertyLoader
+       		- Page(basic class for all pages)
+       		- Ellos(container class)
+       		- WebDriverWrapper
+       		- WebFactory(driver initialization class)
+       		- Log4j
+
+
+Home tasks:
+
+1. I still do not see any of your links to your projects on gitHub(look at homeTask5)
+2. Complete all tests for next login functions:
+	- login;
+	- registration;
+	- product page;
+	- add product to basket;
+	- checkout page;
+	- my cabinet page;
+	As result you must have 6 test class with test methods!
+3. Create ScreenShot wrapper
+4. Try to run all your tests on Jenkins
+
+
+Read / watch
+
+Jenkins:
+https://www.youtube.com/watch?v=XY-ZB3FRnxw
+https://www.youtube.com/watch?v=lTQGi5jzjvo
+https://www.youtube.com/watch?v=RR0LabeUQ88
+
+DesiredCapabilities
+https://code.google.com/p/selenium/wiki/DesiredCapabilities
+https://selenium.googlecode.com/git/docs/api/java/org/openqa/selenium/remote/DesiredCapabilities.html
+
+Video of previous lectures:
+https://youtu.be/QeAZoBc_fss
+https://youtu.be/XdAPnbsJOSE
+
+Jenkins map - https://drive.google.com/open?id=0Bzh6QHLIFmHrdW9yQUJWbWstem8
