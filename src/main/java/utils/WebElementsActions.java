@@ -98,10 +98,16 @@ public class WebElementsActions {
      * Method is used to check that element is present on page.
      */
     public boolean isElementPresent(String elementLocator) throws NoElementFound {
-        if (!driver.findElement(ConfigData.ui(elementLocator)).isDisplayed()) {
+        List<WebElement> list = driver.findElements(ConfigData.ui(elementLocator));
+
+        if (list.size() == 0) {
+            log.error("Failed to wait for the appearance of the element _" + elementLocator + "_!");
             return false;
+        } else {
+            log.info("Element _" + elementLocator + "_ is Present");
+            return true;
         }
-        return true;
+
     }
 
 

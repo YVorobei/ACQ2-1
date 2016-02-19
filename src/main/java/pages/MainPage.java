@@ -15,7 +15,6 @@ import utils.WebElementsActions;
 public class MainPage extends Page {
 
     private static final String MAIN_PAGE = PropertyLoader.loadProperty("site.url");
-
     private static final Logger log = Logger.getLogger(ClassNameUtil.getCurrentClassName());
 
     public MainPage(WebDriverWrapper dr) {

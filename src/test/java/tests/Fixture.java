@@ -1,8 +1,7 @@
 package tests;
 
 import org.apache.log4j.Logger;
-import org.testng.annotations.AfterSuite;
-import org.testng.annotations.BeforeSuite;
+import org.testng.annotations.*;
 import pages.Ellos;
 import utils.PropertyLoader;
 import utils.WebDriverFactory;
@@ -19,13 +18,13 @@ public class Fixture {
     public static Ellos ellos;
 
     private static final Logger log = Logger.getLogger(Fixture.class);
-
-    public static final String implWait = PropertyLoader.loadProperty("wait.timeout");
+    private static final String implWait = PropertyLoader.loadProperty("wait.timeout");
 
 
     @BeforeSuite
     public void setEnv(){
-        driverWrapper = WebDriverFactory.initDriver();
+        driverWrapper = new WebDriverWrapper(WebDriverFactory.getInstance());
+
         driverWrapper.manage().timeouts().implicitlyWait(Long.parseLong(implWait), TimeUnit.SECONDS);
 
         try {
