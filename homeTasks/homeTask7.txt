@@ -1,0 +1,55 @@
+Week Topics:
+
+	1. Selenium Grid
+	2. Cucumber
+
+
+Home tasks:
+
+1. I still do not see your links to your projects on gitHub(look at homeTask5)
+2. Complete all tests for next login functions:
+	- login;
+	- registration;
+	- product page;
+	- add product to basket;
+	- checkout page;
+	- my cabinet page;
+	As result you must have 6 test class with test methods!
+3. Create ScreenShot wrapper
+4. Try to run tests with cucumber
+
+
+
+Read / watch
+
+Cucumber project you can find in:
+https://github.com/ViTaLESs/ACQ2Cucumber
+
+Cucumber
+https://www.youtube.com/playlist?list=PL_noPv5wmuO_t6yYbPfjwhJFOOcio89tI
+
+Selenium Grid
+Instruction:
+https://github.com/SeleniumHQ/selenium/wiki/Grid2
+
+Config files:
+https://github.com/SeleniumHQ/selenium/blob/master/java/server/src/org/openqa/grid/common/defaults/DefaultHub.json
+https://github.com/SeleniumHQ/selenium/blob/master/java/server/src/org/openqa/grid/common/defaults/DefaultNode.json
+
+http://internetka.in.ua/junit-tests-parallel/
+
+DesiredCapabilities
+https://code.google.com/p/selenium/wiki/DesiredCapabilities
+https://selenium.googlecode.com/git/docs/api/java/org/openqa/selenium/remote/DesiredCapabilities.html
+
+Video of previous lectures:
+https://youtu.be/-VAdTAepef4
+https://youtu.be/6VoT3F1y06Y
+
+Selenium Grid map - https://drive.google.com/open?id=0Bzh6QHLIFmHraDF5T1hPdFp1emM
+Cucumber map - https://drive.google.com/file/d/0Bzh6QHLIFmHrdVBnQTRZdjlvakk/view?usp=sharing
+
+
+
+
+
