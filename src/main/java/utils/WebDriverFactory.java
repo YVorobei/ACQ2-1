@@ -28,7 +28,7 @@ public class WebDriverFactory {
 
     private static final Logger log = Logger.getLogger(ClassNameUtil.getCurrentClassName());
 
-    private static WebDriver webDriver;
+    public static WebDriver webDriver;
     private static GridInitialization gridInit = null;
 
     /* Browsers constants */
@@ -177,7 +177,7 @@ public class WebDriverFactory {
     }
 
 
-    /*//old version
+    //old version
     public static WebDriverWrapper initDriver(String driverName){
         WebDriverWrapper driverWripper = null;
 
@@ -202,6 +202,6 @@ public class WebDriverFactory {
         driverWripper.manage().window().maximize();
 
         return driverWripper;
-    }*/
+    }
 
 }

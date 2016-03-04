@@ -1,0 +1,33 @@
+What questions you need to prepare for a job interview:
+1. Java, repeat OOP course (all)
+2. Basic Selenium WD commands (classes Action, Select..) + Locators
+3. JUnit\TestNG fixture
+4. Maven - dependencies, life cycle
+5. Git - basik commands
+6. Jenkins - job creation
+
+
+Video of previous lectures:
+https://youtu.be/cs0vkZp6oSM
+
+
+Tips and tricks map - https://drive.google.com/file/d/0Bzh6QHLIFmHrYUtJSGx4Tm9EY3c/view?usp=sharing
+
+
+Questions from last lecture
+1. Какие локаторы Вы исплользовали у себя на проекте и почему?
+2. Какой фреймворк для запуска тестов Вы использовали на своем проекте и почему?
+3. Изобразите иерархию фикстур используемого фреймворка для запуска тестов?
+4. Жизненный цикл мавен
+5. Ожидания. Какие знаете и в чем разница(классы интерфейсы)?
+6. Какие паттерны Вы использовали в Вашем фреймворке и почему?
+7. Как Вы хранили тестовые данные в Вашем проекте и почему?
+8. Какие коллекции Вы знаете?
+9. ! Как Вы принимаете ришение какую коллекцию использовать?
+10.
+	final int a;
+	final Obj asa; в чем разница?
+11. Что такое агрегация и композиция? В чем разница?
+12. Сколько денег Вы хотите?
+
+

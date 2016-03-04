@@ -20,10 +20,12 @@ public class Fixture {
     private static final Logger log = Logger.getLogger(Fixture.class);
     private static final String implWait = PropertyLoader.loadProperty("wait.timeout");
 
-
-    @BeforeSuite
-    public void setEnv(){
-        driverWrapper = new WebDriverWrapper(WebDriverFactory.getInstance());
+    //@Parameters("hubAddress")
+    @BeforeSuite(alwaysRun = true)
+    @Parameters({"browser"})
+    public void setEnv(String browser){
+        driverWrapper = WebDriverFactory.initDriver(browser);
+        //driverWrapper = new WebDriverWrapper(WebDriverFactory.getInstance());
 
         driverWrapper.manage().timeouts().implicitlyWait(Long.parseLong(implWait), TimeUnit.SECONDS);
 
@@ -36,7 +38,7 @@ public class Fixture {
         log.info("Start Test Suite execution");
     }
 
-    @AfterSuite
+    @AfterSuite(alwaysRun = true)
     public void resetEnv(){
         driverWrapper.quit();
 

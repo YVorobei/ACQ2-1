@@ -1,6 +1,22 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name ="globalSuite" verbose="1">
-    <suite-files>
-        <suite-file path="functional.xml"/>
-    </suite-files>
+    <suite name="Full suite" verbose="1" parallel="methods" thread-count="2">
+        <parameter name="hubAddress" value="http://127.0.0.1:4444/wd/hub"></parameter>
+
+        <test name="Windows / Firefox1">
+            <parameter name="browser" value="firefox"/>
+            <classes>
+                <class name="tests.LoginTests"/>
+            </classes>
+        </test>
+
+        <test name="Windows / Chrome">
+            <parameter name="browser" value="chrome"/>
+            <classes>
+                <class name="tests.LoginTests"/>
+            </classes>
+        </test>
+
 </suite>
+<!--        <suite-files>
+            <suite-file path="functional.xml"/>
+        </suite-files>-->

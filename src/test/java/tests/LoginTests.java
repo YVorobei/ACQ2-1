@@ -20,7 +20,6 @@ public class LoginTests extends Fixture {
         Log4JWrapper.start("Start LoginTests");
     }
 
-
     @Test
     public void test1_positiveLogin() {
         ellos.loginPage.openPage();
